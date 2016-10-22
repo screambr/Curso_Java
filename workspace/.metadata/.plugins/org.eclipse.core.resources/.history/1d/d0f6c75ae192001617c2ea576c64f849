@@ -1,0 +1,10 @@
+package Aula4.Exercicios.Pedagio;
+
+import Aula4.Exercicios.Pedagio.veiculo;
+
+public class CalculadorPedagio implements PagaPedagio {
+	public static void main(String[] args) {
+
+	}
+
+}

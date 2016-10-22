@@ -1,0 +1,30 @@
+package Aula5.Garagem;
+
+import java.util.Scanner;
+
+public class Garagem {
+
+
+    public static void main(String[] args){
+        String marca;
+        String modelo = null;
+        int placa = 0;
+        int ano = 0;
+        double preco = 0.0;
+        Scanner entrada = new Scanner(System.in);
+          
+      
+        System.out.println("Cadastrando novo Veiculo.");
+        System.out.print("Entre com seu Veiculo: ");
+        marca = entrada.nextLine();
+
+        System.out.print("Entre com o valor inicial do Veiculo: ");
+        preco = entrada.nextDouble();
+
+        //Criando a conta de um cliente
+        veiculo novoVeiculo = new veiculo(marca, modelo, placa, ano, preco);
+        novoVeiculo.iniciar();
+    }
+
+
+}

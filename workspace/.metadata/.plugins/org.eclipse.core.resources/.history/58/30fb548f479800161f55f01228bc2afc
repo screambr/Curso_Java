@@ -1,0 +1,32 @@
+package Aula5.List;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+public class TestarListar {
+public static void main(String[] args) {
+	List minhaLista = new ArrayList();
+	List minhaOutraLista = new LinkedList();
+	
+	minhaLista.add("Teste");
+	minhaLista.add("Outra coisa");
+	minhaLista.add(1);
+	
+	System.out.println("minhaLista");
+		for (Object object : minhaLista) {
+			System.out.print(object);
+			
+	}
+		
+	List<String> minhaListaString =new ArrayList<String>();
+	minhaListaString.add("Valor1");
+	minhaListaString.add("Valor2");
+	minhaListaString.add("Valor3");
+	minhaListaString.add("Valor4");
+	
+	System.out.println("minhaListaString: ");
+	for (String valor : minhaListaString){
+		System.out.println(valor);
+	}
+}
+}

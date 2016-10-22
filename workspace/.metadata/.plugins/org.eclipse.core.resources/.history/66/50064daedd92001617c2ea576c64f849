@@ -1,0 +1,6 @@
+package Aula4.Exercicios.Pedagio;
+
+public abstract class veiculo  {
+	public abstract void pagar();
+
+}

@@ -1,0 +1,7 @@
+package Aula4.Exercicios.Pedagio;
+
+public interface PagaPedagio {
+	int qtdEixo = 0;
+	void getEixo();
+	
+	}

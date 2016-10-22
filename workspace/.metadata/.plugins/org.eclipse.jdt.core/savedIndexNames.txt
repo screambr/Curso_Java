@@ -1,0 +1,18 @@
+INDEX VERSION 1.126+/home/java01/Aula1/workspace/.metadata/.plugins/org.eclipse.jdt.core
+3512593698.index
+2942867165.index
+3824872905.index
+1658170112.index
+2343964213.index
+1978225246.index
+4239474339.index
+332768704.index
+366123926.index
+948851292.index
+3913345658.index
+2273279394.index
+1800220763.index
+1303156227.index
+678522779.index
+1646388520.index
+314531727.index

@@ -1,0 +1,24 @@
+package Aula5.Garagem;
+
+	import java.util.ArrayList;
+	import java.util.List;
+
+	public class garagem2 {
+		
+		public boolean adicionar(veiculo2 veiculo) {
+			return false;
+		}
+
+		public boolean vender(String placa) {
+			return false;
+		}
+
+		public veiculo2 buscar(String placa) {
+			return null;
+		}
+
+		public List<veiculo2> listar() {
+			return new ArrayList<>();
+		}
+		
+}

@@ -1,0 +1,10 @@
+package Aula4.Exercicios.Pedagio;
+
+public abstract class Carro extends veiculo {
+
+	@Override
+	public void pagar() {
+		// TODO Auto-generated method stub
+
+	}
+}

@@ -1,0 +1,36 @@
+package Aula5.List;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class TestarListaPessoa {
+	public static void main(String[] args) {
+		List<Pessoa> pessoas = new ArrayList<Pessoa>();
+		pessoas.add(new Pessoa("Juquinha", "1"));
+		pessoas.add(new Pessoa("Flavia", "2"));
+		pessoas.add(new Pessoa("Julia", "3"));
+		pessoas.add(new Pessoa("Marcio", "4"));
+		pessoas.add(new Pessoa("Manoela", "5"));
+		
+		boolean contains = pessoas.contains(pessoaParaBusca);
+		int indexOf = pessoas.indexOf(pessoaParaBusca);
+		
+		pessoas.remove(0);
+		pessoas.remove(pessoaParaBusca);
+	// Collections.sort(pessoas);
+		Collections.sort(pessoas, new PessoaPorCpfComparator());
+		
+		
+		System.out.println("indexOf Manoela: " + indexOf);
+		System.out.println("contains Manoela: " + contains);
+		System.out.println("pessoa.size: " + pessoas.size);
+		System.out.println("pessoas.isEmpty: " + pessoas.isEmpty);
+		
+		for (Pessoa pessoa : pessoas){
+			System.out.println(pessoa.getNome() + "=" + pessoa.getCpf());
+		}
+		
+	}
+
+}
