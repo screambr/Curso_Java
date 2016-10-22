@@ -47,4 +47,14 @@
 <fullyQualifiedTypeName name="sun.applet.Main"/>
 <fullyQualifiedTypeName name="java.beans.VetoableChangeListener"/>
 <fullyQualifiedTypeName name="Aula5.Garagem2.Veiculo"/>
+<fullyQualifiedTypeName name="java.lang.Character"/>
+<fullyQualifiedTypeName name="javax.imageio.stream.FileImageInputStream"/>
+<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="Aula5.Garagem2.Garagem"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="javax.management.RuntimeErrorException"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="java.lang.Runnable"/>
 </qualifiedTypeNameHistroy>
