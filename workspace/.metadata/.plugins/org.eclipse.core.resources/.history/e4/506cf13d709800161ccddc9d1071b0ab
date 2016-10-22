@@ -1,0 +1,11 @@
+package Aula6.wrappers;
+
+public class ExemploWrappers {
+	public static void main(String[] args) {
+		Float meuValor = 10f;
+		Float meuValorConvertido = Float.valueOf("10");
+		System.out.println(meuValor);
+		System.out.println(meuValorConvertido);
+	}
+
+}

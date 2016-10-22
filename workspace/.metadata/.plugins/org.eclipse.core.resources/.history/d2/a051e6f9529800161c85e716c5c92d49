@@ -1,0 +1,10 @@
+package Aula6.generics;
+
+public class ExemploGenerics {
+	public static void main(String[] args) {
+		Wrapper<String> wrapperString = new Wrapper<>("Meu Valor");
+				Wrapper<Integer> wrapperInteger = new Wrapper<Integer>(1);
+				//Wrapper wrapperObject = new
+	}
+
+}

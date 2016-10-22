@@ -1,0 +1,40 @@
+package Aula6.io;
+
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import javax.imageio.stream.FileImageInputStream;
+
+public class ExemploLeituraArquivo {
+	public static void main(String[] args) throws IOException {
+	geraArquivo();
+	}
+	private static void geraArquivo() throws IOException, FileNotFoundException {
+		String conteudoDoArquivo = "Meu primeiro arquivo usando java";
+		
+		try (FileOutputStream out = new FileOutputStream("/home/java01/exemplo.txt")){
+		out.write(conteudoDoArquivo.getBytes());
+	}
+	private static void lerArquivo() throw IOException{
+		try (FileImageInputStream fileImputStream = new FileImageInputStream("/home/java01/exemplo.txt")){
+			byte buffer[] = new byte(1024);
+			int read = fileImputStream.read(buffer);
+			while (read != -1) {
+				System.out.println(new String(buffer, 0, read));
+				read= fileImputStream.read(buffer);
+				
+			}
+			
+		}
+	}
+	private static void gravarArquivo() throws IOException, FileNotFoundException{
+		String conteudoDoArquivo = "Meu primeiro arquivo java";
+		try (FileOutputStream out = new FileOutputStream("/home/java01/exemplo.txt")){
+			out.write(conteudoDoArquivo.getBytes());
+		}
+	}
+	
+
+}

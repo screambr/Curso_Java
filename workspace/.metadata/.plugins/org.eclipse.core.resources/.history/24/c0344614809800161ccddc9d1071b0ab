@@ -1,0 +1,11 @@
+package aula6.exceptions;
+
+import Aula6.exceptions.ErroValidacao;
+
+public class TestaMinhaClasseQualquer {
+
+	public static void main(String[] args) throws ErroValidacao {
+		MinhaClasseQualquer minhaClasseQualquer = new MinhaClasseQualquer();
+		minhaClasseQualquer.fazAlgumaCoisa();
+	}
+}
