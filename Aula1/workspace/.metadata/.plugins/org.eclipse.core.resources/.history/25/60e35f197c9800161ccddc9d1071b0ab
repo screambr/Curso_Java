@@ -1,0 +1,16 @@
+package Aula6.io;
+
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class ExemploLeituraArquivo {
+	public static void main(String[] args) throws IOException {
+	String conteudoDoArquivo = "Meu primeiro arquivo usando java";
+	
+	try (FileOutputStream out = new FileOutputStream("/home/java01/exemplo.txt")){
+	out.write(conteudoDoArquivo.getBytes());
+	}
+	
+}
+}

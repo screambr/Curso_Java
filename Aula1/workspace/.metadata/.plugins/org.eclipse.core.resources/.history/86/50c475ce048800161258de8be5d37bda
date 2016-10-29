@@ -1,0 +1,15 @@
+package Diretorio;
+
+public class CriarDiretorios {
+public static void main(String[] args) {
+Diretorio d1 = new Diretorio();
+Diretorio d2 = new Diretorio();
+Diretorio d3 = new Diretorio();
+	
+System.out.println(d1.quantidade);
+System.out.println(d2.quantidade);
+System.out.println(d3.quantidade);
+
+}
+
+}

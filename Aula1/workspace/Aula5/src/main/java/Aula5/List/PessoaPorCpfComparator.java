@@ -1,0 +1,13 @@
+package Aula5.List;
+import java.util.Comparator;
+
+public class PessoaPorCpfComparator implements Comparator<Pessoa>{
+
+	@Override
+	public int compare(Pessoa pessoa, Pessoa outraPessoa) {
+		// TODO Auto-generated method stub
+		return pessoa.getCpf().compareTo(outraPessoa.getCpf());
+		
+	}
+
+}

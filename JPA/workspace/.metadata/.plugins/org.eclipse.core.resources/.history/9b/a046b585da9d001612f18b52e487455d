@@ -1,0 +1,27 @@
+package com.dextrainning.test;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class CalculadoraTest {
+	private Calculadora calculadora=new Calculadora();
+
+	@Test
+	public void testarSoma() {
+		double resultado = Calculadora.somar(5,5);
+		Assert.assertEquals(Double.valueOf(10),resultado);
+	}
+
+	@Test
+	public void testarSubtracao() {
+	}
+
+	@Test
+	public void testarMultiplicacao() {
+	}
+
+	@Test
+	public void testarDivisao() {
+	}
+
+}

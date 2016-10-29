@@ -1,0 +1,8 @@
+package Aula5.GeradorSenha;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Atendente {
+	List<String> listaSenha =new ArrayList<String>();
+}
