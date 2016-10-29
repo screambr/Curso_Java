@@ -1,0 +1,28 @@
+package com.dextrainning.pessoa;
+
+import javax.persistence.EntityManager;
+
+import com.dextrainning.jpa.EntityManagerUtil;
+
+public class PessoaService {
+	public void salvar(Pessoa pessoa){
+		EntityManager em = EntityManagerUtil.criarEntityManager();
+		try {
+			em.getTransaction().begin();
+			em.persist(pessoa);
+			em.getTransaction().commit();
+
+		} catch (Exception e) {
+			em.getTransaction().rollback();
+			throw new RuntimeException(e);
+		} finally {
+			em.close();
+			}
+		}
+		public static Pessoa buscarPorId(Long id){
+			EntityManager em = EntityManagerUtil.criarEntityManager();
+			return em.find(Pessoa.class, id);
+		
+	}
+
+}

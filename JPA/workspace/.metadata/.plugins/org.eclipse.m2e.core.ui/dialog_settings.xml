@@ -35,6 +35,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="/home/java01/JPA/curso_jpa-master"/>
 			<item value="/home/java01/Downloads/curso_jpa-master"/>
 		</list>
 		<list key="projectNameTemplate">

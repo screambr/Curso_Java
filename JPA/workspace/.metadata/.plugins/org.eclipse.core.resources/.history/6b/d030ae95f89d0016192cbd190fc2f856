@@ -1,0 +1,31 @@
+package com.dextrainning.banco;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import com.dextrainning.jpa.EntityManagerUtil;
+
+public class BancoTest {
+
+	@Test
+	public void salvarBancoTeste() {
+		BancoService bancoService = new BancoService();
+		
+		Banco bancoBradesco = new Banco();
+		bancoBradesco.setNome("Bradesco");
+
+		Banco bancoDoBrasil = new Banco();
+		bancoDoBrasil.setNome("Banco Do Brasil");
+			
+		bancoService.salvar(bancoBradesco);
+		bancoService.salvar(bancoDoBrasil);
+		
+		Assert.assertNotNull("Id do Banco Bradesco nao pode ser Null", bancoBradesco.getId());
+		Assert.assertNotNull("Id do Banco do Brasil nao pode ser Null", bancoDoBrasil.getId());
+	}
+
+}
