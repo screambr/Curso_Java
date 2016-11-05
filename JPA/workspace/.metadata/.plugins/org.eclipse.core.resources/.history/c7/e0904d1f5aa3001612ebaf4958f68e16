@@ -1,0 +1,16 @@
+package com.dextrainning.investimento;
+
+
+	import javax.persistence.EntityManager;
+
+	import com.dextrainning.jpa.EntityManagerUtil;
+	import com.dextrainning.service.GenericServices;
+
+	public class InvestimentoService extends GenericServices<Investimento> {
+
+		public InvestimentoService() {
+			super(Investimento.class);
+			
+		}
+		
+	}

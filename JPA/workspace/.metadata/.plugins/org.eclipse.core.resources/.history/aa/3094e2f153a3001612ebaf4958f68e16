@@ -1,0 +1,75 @@
+package com.dextrainning.investimento;
+
+	import java.text.ParseException;
+import java.util.Date;
+	import java.util.List;
+
+	import javax.persistence.EntityManager;
+	import javax.persistence.EntityManagerFactory;
+	import javax.persistence.Persistence;
+
+	import org.junit.AfterClass;
+	import org.junit.Assert;
+	import org.junit.Test;
+
+	import com.dextrainning.jpa.EntityManagerUtil;
+	import com.dextrainning.pessoa.Pessoa;
+	import com.dextrainning.pessoa.PessoaService;
+
+	public class InvestimentoTest {
+
+		@AfterClass
+		public static void close() {
+			EntityManagerUtil.fechar();
+		}
+
+		@Test
+		public void salvarInvestimentoTeste() {
+			InvestimentoService InvestimentoService = new InvestimentoService();
+
+			Investimento InvestimentoI1 = new Investimento();
+			InvestimentoI1.setDescricao("Investimento 1");
+			InvestimentoI1.setValor(1000);
+			InvestimentoI1.setRendimentoMensal(1.5);
+
+
+			Investimento InvestimentoI2 = new Investimento();
+			InvestimentoI2.setDescricao("Investimento 2");
+			InvestimentoI2.setValor(3000);
+			InvestimentoI2.setRendimentoMensal(2.5);
+
+			InvestimentoService.salvar(InvestimentoI1);
+			InvestimentoService.salvar(InvestimentoI2);
+
+			Assert.assertNotNull("Id do Investimento 1 nao pode ser Null", InvestimentoI1.getId());
+			Assert.assertNotNull("Id do Investimento 2 nao pode ser Null", InvestimentoI2.getValor());
+			Assert.assertNotNull("O valor do Investimento 1 nao pode ser Null", InvestimentoI1.getValor());
+			Assert.assertNotNull("O valor do Investimento 2 nao pode ser Null", InvestimentoI2.getValor());
+			Assert.assertNotNull("O Rendimento do Investimento 1 nao pode ser Null", InvestimentoI1.getRendimentoMensal());
+			Assert.assertNotNull("O Rendimento do Investimento 2 nao pode ser Null", InvestimentoI2.getRendimentoMensal());
+		}
+		@Test
+		public void buscarTodosTest(){
+			InvestimentoService InvestimentoService = new InvestimentoService();
+			Investimento InvestimentoI1 = new Investimento();
+			InvestimentoI1.setDescricao("Investimento 1");
+			List<Investimento> Investimentos = InvestimentoService.buscarTodos();
+			Assert.assertEquals(1, Investimentos.size());
+		}
+		/*@Test
+		public void buscarPorIdTeste() throws ParseException {
+			InvestimentoService InvestimentoService = new InvestimentoService();
+			Investimento InvestimentoDoBrasil = new Investimento();
+			InvestimentoDoBrasil.setDescricao("Investimento 1");
+
+			InvestimentoService.salvar(InvestimentoDoBrasil);
+
+			Investimento Investimento = InvestimentoService.buscarPorId(-1L);
+			Investimento InvestimentoEncontrado = InvestimentoService.buscarPorId(InvestimentoDoBrasil.getId());
+
+			Assert.assertNull(Investimento);
+			Assert.assertNotNull(InvestimentoEncontrado);
+			Assert.assertEquals(InvestimentoDoBrasil.getDescricao(), InvestimentoEncontrado.getDescricao());
+		}*/
+	
+	}

@@ -1,0 +1,5 @@
+package com.dextraining.garagem.dominio.veiculo;
+
+public class VeiculoService {
+
+}

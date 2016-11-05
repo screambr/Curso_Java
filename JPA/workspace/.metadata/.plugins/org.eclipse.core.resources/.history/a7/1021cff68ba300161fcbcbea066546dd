@@ -1,0 +1,50 @@
+package com.dextraining.garagem.dominio;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Test;
+
+import com.dextraining.garagem.dominio.veiculo.Veiculo;
+import com.dextraining.garagem.dominio.veiculo.VeiculoService;
+import com.dextrainning.exception.ValidacaoException;
+import com.dextrainning.jpa.EntityManagerUtil;
+
+
+public class GaragemJPA implements Garagem {
+
+	
+	public void adicionar(Veiculo veiculo) {
+		VeiculoService veiculoService = new VeiculoService();
+		veiculoService.salvar(veiculo);
+	}
+	
+		@After
+		public void close() {
+			EntityManagerUtil.fechar();
+		}
+
+
+	@Override
+	public void vender(String placa) {
+		// TODO Implementar venda de veiculo por placa
+	}
+
+	@Override
+	public Veiculo buscar(String placa) {
+		// TODO Implementar busca de veiculo por placa
+		return null;
+	}
+
+	@Override
+	public List<Veiculo> listar() {
+		// TODO: Implementar consulta que lista todos os veiculos ordenados por:
+		// marca;
+		// modelo;
+		// ano;
+		// preco;
+
+		return null;
+	}
+}

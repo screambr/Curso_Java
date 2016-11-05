@@ -1,0 +1,38 @@
+package com.dextraining.garagem.dominio.veiculo;
+
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
+import com.dextrainning.exception.ValidacaoException;
+import com.dextrainning.jpa.EntityManagerUtil;
+import com.dextrainning.service.GenericService;
+public class VeiculoService extends GenericService<Veiculo> {
+
+
+	public VeiculoService() {
+		super(Veiculo.class);
+	}
+
+	@Override
+	public void salvar(Veiculo veiculo) {
+		if (veiculo.getPlaca() == null || veiculo.getPlaca().isEmpty()) {
+			throw new ValidacaoException("A placa nao pode estar vazia");
+		}
+		
+		super.salvar(veiculo);
+	}
+
+	/*public List<Veiculo> buscarTodosOrdenadosPorValorDesc() {
+		EntityManager em = EntityManagerUtil.criarEntityManager();
+		try {
+			String jpql = "SELECT i FROM Investimento i ORDER BY i.valor DESC";
+			TypedQuery<Investimento> query = em.createQuery(jpql, Investimento.class);
+			return query.getResultList();
+		} finally {
+			em.close();
+		}
+	}*/
+}

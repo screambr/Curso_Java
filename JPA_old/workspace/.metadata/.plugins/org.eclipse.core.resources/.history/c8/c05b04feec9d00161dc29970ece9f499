@@ -1,0 +1,15 @@
+package com.dextrainning.banco;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import org.junit.Test;
+
+public class BancoTest {
+
+	@Test
+	public void salvarBancoTeste() {
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("CURSO_JPA");
+
+	}
+}

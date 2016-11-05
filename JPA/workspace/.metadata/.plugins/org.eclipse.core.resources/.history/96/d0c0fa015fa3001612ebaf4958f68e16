@@ -1,0 +1,54 @@
+package com.dextrainning.investimento;
+
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Test;
+
+import com.dextrainning.exception.ValidacaoException;
+import com.dextrainning.jpa.EntityManagerUtil;
+
+public class InvestimentoServiceTest {
+
+	@After
+	public void close() {
+		EntityManagerUtil.fechar();
+	}
+
+	@Test
+	public void salvarComSucessoTest() {
+		Investimento investimento1 = new Investimento();
+		investimento1.setDescricao("Investimento 1");
+		investimento1.setRendimentoMensal(0.1);
+		investimento1.setValor(3500.00);
+		Investimento investimento2 = new Investimento();
+		investimento2.setDescricao("Investimento 2");
+		investimento2.setRendimentoMensal(0.1);
+		investimento2.setValor(500.00);
+
+		InvestimentoService investimentoService1 = new InvestimentoService();
+		investimentoService1.salvar(investimento1);
+		Investimento investimentoSalvo1 = investimentoService1.buscarPorId(investimento1.getId());
+		Assert.assertNotNull(investimentoSalvo1);
+		InvestimentoService investimentoService2 = new InvestimentoService();
+		investimentoService2.salvar(investimento2);
+		Investimento investimentoSalvo2 = investimentoService2.buscarPorId(investimento2.getId());
+		Assert.assertNotNull(investimentoSalvo2);
+	}
+
+	@Test(expected = ValidacaoException.class)
+	public void salvarSemCampoObrigatorioTest() {
+		Investimento investimento1 = new Investimento();
+		investimento1.setRendimentoMensal(0.1);
+		investimento1.setValor(500.00);
+
+		InvestimentoService investimentoService1 = new InvestimentoService();
+		investimentoService1.salvar(investimento1);
+		
+		Investimento investimento2 = new Investimento();
+		investimento2.setRendimentoMensal(0.1);
+		investimento2.setValor(500.00);
+
+		InvestimentoService investimentoService2 = new InvestimentoService();
+		investimentoService2.salvar(investimento2);
+	}
+}

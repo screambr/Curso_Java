@@ -1,0 +1,65 @@
+package com.dextrainning.banco;
+
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import org.junit.AfterClass;
+import org.junit.Assert;
+import org.junit.Test;
+
+import com.dextrainning.jpa.EntityManagerUtil;
+import com.dextrainning.pessoa.Pessoa;
+import com.dextrainning.pessoa.PessoaService;
+
+public class BancoTest {
+
+	@AfterClass
+	public static void close() {
+		EntityManagerUtil.fechar();
+	}
+
+	@Test
+	public void salvarBancoTeste() {
+		BancoService bancoService = new BancoService();
+
+		Banco bancoBradesco = new Banco();
+		bancoBradesco.setNome("Bradesco");
+
+		Banco bancoDoBrasil = new Banco();
+		bancoDoBrasil.setNome("Banco Do Brasil");
+
+		bancoService.salvar(bancoBradesco);
+		bancoService.salvar(bancoDoBrasil);
+
+		Assert.assertNotNull("Id do Banco Bradesco nao pode ser Null", bancoBradesco.getId());
+		Assert.assertNotNull("Id do Banco do Brasil nao pode ser Null", bancoDoBrasil.getId());
+	}
+	@Test
+	public void buscarTodosTest(){
+		BancoService bancoService = new BancoService();
+		Banco bancoDoBrasil = new Banco();
+		bancoDoBrasil.setNome("Banco do Brasil");
+		List<Banco> bancos = bancoService.buscarTodos();
+		Assert.assertEquals(1, bancos.size());
+	}
+	/*@Test
+	public void buscarPorIdTeste() throws ParseException {
+		BancoService bancoService = new BancoService();
+		Banco bancoDoBrasil = new Banco();
+		bancoDoBrasil.setNome("Banco do Brasil");
+
+		bancoService.salvar(bancoDoBrasil);
+
+		Banco banco = bancoService.buscarPorId(-1L);
+		Banco bancoEncontrado = bancoService.buscarPorId(bancoDoBrasil.getId());
+
+		Assert.assertNull(banco);
+		Assert.assertNotNull(bancoEncontrado);
+		Assert.assertEquals(bancoDoBrasil.getNome(), bancoEncontrado.getNome());
+	}
+*/
+}

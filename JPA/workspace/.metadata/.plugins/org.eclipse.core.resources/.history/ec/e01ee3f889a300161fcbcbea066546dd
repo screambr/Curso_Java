@@ -1,0 +1,42 @@
+package com.dextraining.garagem.dominio;
+
+	import java.util.List;
+
+	import javax.persistence.EntityManager;
+	import javax.persistence.TypedQuery;
+
+	import com.dextrainning.exception.ValidacaoException;
+	import com.dextrainning.jpa.EntityManagerUtil;
+	import com.dextrainning.service.GenericService;
+
+	public class GaragemService extends GenericService<Garagem> {
+
+		public GaragemService() {
+			super(GaragemJPA.class);
+		}
+
+		@Override
+		public void salvar(Garagem Garagem) {
+			if (Garagem.getC == null || Garagem.getDescricao().isEmpty()) {
+				throw new ValidacaoException("Descricao nao pode estar vazia");
+			}
+			if (Garagem.getRendimentoMensal() == null || Garagem.getRendimentoMensal() <= 0) {
+				throw new ValidacaoException("Rendimento mensal invalido");
+			}
+			if (Garagem.getValor() == null || Garagem.getValor() <= 0) {
+				throw new ValidacaoException("Valor invalido");
+			}
+			super.salvar(Garagem);
+		}
+
+		public List<Garagem> buscarTodosOrdenadosPorValorDesc() {
+			EntityManager em = EntityManagerUtil.criarEntityManager();
+			try {
+				String jpql = "SELECT i FROM Garagem i ORDER BY i.valor DESC";
+				TypedQuery<Garagem> query = em.createQuery(jpql, Garagem.class);
+				return query.getResultList();
+			} finally {
+				em.close();
+			}
+		}
+	}

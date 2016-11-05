@@ -1,0 +1,30 @@
+package com.dextrainning.investimento;
+
+
+	import javax.persistence.EntityManager;
+
+	import com.dextrainning.jpa.EntityManagerUtil;
+	import com.dextrainning.service.GenericService;
+
+	public class InvestimentoService extends GenericService<Investimento> {
+
+		public InvestimentoService() {
+			super(Investimento.class);
+			
+		}
+		@Override
+		public void salvar(Investimento investimento){
+			if(investimento.getDescricao()==null||investimento.getDescricao().isEmpty(){
+				throw new ValidacaoException("Descricao nao pode ser vazia");
+							}
+			if(investimento.getRendimentoMensal()== null||investimento.getRendimentoMensal()<=0{
+				throw new ValidacaoException("Rendimento nao pode ser menor que 0");	
+				}
+			if (investimento.getValor() == null||investimento.getValor() <=0{
+				throw new ValidacaoException("Valor nao pode ser menor que 0");
+				
+			}
+				
+		}
+		
+	}
