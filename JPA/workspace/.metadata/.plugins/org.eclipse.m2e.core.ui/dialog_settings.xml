@@ -43,6 +43,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="/home/java01/JPA/curso_jpa-master"/>
 			<item value="/home/java01/Downloads/curso_jpa-master (4)"/>
 			<item value="/home/java01/Downloads/curso_jpa-master (3)"/>
 			<item value="/home/java01/Downloads/curso_jpa-master (2)"/>
@@ -51,7 +52,6 @@
 			<item value="/home/java01/Git/Aula1"/>
 			<item value="/home/java01/Downloads/curso_jpa-master (2)/garagem-jpa"/>
 			<item value="/home/java01/Downloads/curso_jpa-master/garagem-jpa"/>
-			<item value="/home/java01/JPA/curso_jpa-master"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

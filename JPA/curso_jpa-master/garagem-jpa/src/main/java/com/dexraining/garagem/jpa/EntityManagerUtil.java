@@ -12,9 +12,13 @@ public class EntityManagerUtil {
 
 	private static EntityManagerFactory FACTORY;
 
+	public static void config(String puName) {
+		FACTORY = Persistence.createEntityManagerFactory(puName);
+	}
+
 	public static EntityManager criarEntityManager() {
 		if (FACTORY == null) {
-			FACTORY = Persistence.createEntityManagerFactory("BIBLIOTECA_PU");
+			config("GARAGEM_PU");
 		}
 		return FACTORY.createEntityManager();
 	}
@@ -22,6 +26,7 @@ public class EntityManagerUtil {
 	public static void fechar() {
 		if (FACTORY != null) {
 			FACTORY.close();
+			FACTORY = null;
 		}
 	}
 }
