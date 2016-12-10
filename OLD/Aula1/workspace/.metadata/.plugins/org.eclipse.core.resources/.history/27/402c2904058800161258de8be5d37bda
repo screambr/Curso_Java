@@ -1,0 +1,13 @@
+package Diretorio;
+
+public class Diretorio {
+public int quantidade;
+public Diretorio(){
+	quantidade++;
+	quantidade++;
+	quantidade++;
+	quantidade++;
+	quantidade++;
+}
+
+}

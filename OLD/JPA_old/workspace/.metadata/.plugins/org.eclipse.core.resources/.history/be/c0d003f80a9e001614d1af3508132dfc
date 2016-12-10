@@ -1,0 +1,15 @@
+package com.dextrainning.pessoa;
+
+import javax.persistence.EntityManager;
+
+import com.dextrainning.jpa.EntityManagerUtil;
+import com.dextrainning.service.GenericServices;
+
+public class PessoaService extends GenericServices<Pessoa> {
+
+	public PessoaService() {
+		super(Pessoa.class);
+		
+	}
+
+}

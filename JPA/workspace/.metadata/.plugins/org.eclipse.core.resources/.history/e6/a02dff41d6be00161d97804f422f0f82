@@ -1,0 +1,27 @@
+package br.com.javaweb.gerenciador.dao;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import br.com.javaweb.gerenciador.Usuario;
+
+public class UsuarioDAO {
+
+	private final static Map<String, Usuario> USUARIOS = new HashMap<>();
+	static {
+		USUARIOS.put("anderson.m.rodrigues@gmail.com", new Usuario("anderson.m.rodrigues@gmail.com","a1b2c3d4"));
+		USUARIOS.put("anderson.m.rodrigues@hotmail.com", new Usuario("anderson.m.rodrigues@hotmail.com","d4c3b2a1"));
+	}
+
+	public Usuario buscaPorEmailESenha(String email, String senha) {
+		if (!USUARIOS.containsKey(email))
+			return null;
+
+		Usuario usuario = USUARIOS.get(email);
+		if (usuario.getSenha().equals(senha))
+			return usuario;
+		
+		return null;
+	}
+
+}

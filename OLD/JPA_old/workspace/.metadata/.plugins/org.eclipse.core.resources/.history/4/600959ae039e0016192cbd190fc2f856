@@ -1,0 +1,58 @@
+package com.dextrainning.pessoa;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import org.junit.AfterClass;
+import org.junit.Assert;
+import org.junit.Test;
+
+import com.dextrainning.jpa.EntityManagerUtil;
+
+public class PessoaTest {
+	
+
+		@AfterClass
+		public static void close() {
+			EntityManagerUtil.fechar();
+		}
+
+		@Test
+		public void salvarPessoaTeste() throws ParseException {
+			PessoaService pessoaService = new PessoaService();
+
+			Pessoa pessoa = new Pessoa();
+			pessoa.setNome("Anderson");
+
+			SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+			Date dataNascimento = dateFormat.parse("08/07/1982");
+
+			pessoaService.salvar(pessoa);
+			
+			Assert.assertNotNull("Id da pessoa nao pode ser Null", pessoa.getId());
+			
+		}
+
+		@Test
+		public void buscarPorIdTeste() {
+			PessoaService pessoaService = new PessoaService();
+			Pessoa pessoa = new Pessoa();
+			pessoa.setNome("Anderson");
+			
+			pessoaService.salvar(pessoa);
+
+			Pessoa pessoa1 = PessoaService.buscarPorId(-1L);
+			Pessoa pessoaEncontrado = PessoaService.buscarPorId(pessoa1.getId());
+			Assert.assertNull(pessoa1);
+			Assert.assertNull(pessoaEncontrado);
+			Assert.assertEquals(pessoa1.getNome(),pessoaEncontrado.getNome());
+		}
+
+	}
+
+

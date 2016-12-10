@@ -1,0 +1,32 @@
+package Aula6.geracaosenhas;
+
+public class GeradorSenha {
+	private static final String PREFIXO_SENHA_IDOSO = "I";
+	private static final String PREFIXO_SENHA_PADRAO = "P";
+	privete List<integer> senhasIdosos;
+	privete List<integer> senhasPadrao;
+	
+	
+	public String gerarSenhaIdoso(){
+		String senha = PREFIXO_SENHA_IDOSO + proximaSenhaIdoso;
+		senhasIdosos.add(proximaSenhaIdoso);
+		proximaSenhaIdoso++;
+		return null;
+	}
+		public String gerarSenhaPadrao(){
+			String senha = PREFIXO_SENHA_PADRAO + proximaSenhaPadrao;
+			senhasPadrao.add(proximaSenhaPadrao);
+			proximaSenhaPadrao++;
+			return senha;
+					}
+		public String proximaSenha(){
+			if (!senhasIdosos.isEmpty()) {
+				return PREFIXO_SENHA_IDOSO
+			}
+		}
+	{
+		
+		
+	}
+
+}

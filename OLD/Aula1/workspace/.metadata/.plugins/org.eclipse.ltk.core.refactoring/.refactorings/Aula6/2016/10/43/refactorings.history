@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract method &apos;private static void geraArquivo() throws IOException, FileNotFoundException &apos; from &apos;Aula6.io.ExemploLeituraArquivo.main()&apos; to &apos;Aula6.io.ExemploLeituraArquivo&apos;&#x0A;- Original project: &apos;Aula6&apos;&#x0A;- Method name: &apos;geraArquivo&apos;&#x0A;- Destination type: &apos;Aula6.io.ExemploLeituraArquivo&apos;&#x0A;- Declared visibility: &apos;private&apos;" comments="false" description="Extract method &apos;geraArquivo&apos;" destination="0" exceptions="false" flags="786434" id="org.eclipse.jdt.ui.extract.method" input="/src\/main\/java&lt;Aula6.io{ExemploLeituraArquivo.java" name="geraArquivo" replace="false" selection="270 186" stamp="1477157578630" version="1.0" visibility="2"/>
+</session>

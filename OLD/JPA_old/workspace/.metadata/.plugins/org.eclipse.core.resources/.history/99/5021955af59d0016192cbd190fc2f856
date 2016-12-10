@@ -1,0 +1,5 @@
+package com.dextrainning.jpa;
+
+public class EntityManagerUtil {
+
+}

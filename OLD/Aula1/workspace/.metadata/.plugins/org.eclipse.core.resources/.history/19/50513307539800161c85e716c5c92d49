@@ -1,0 +1,6 @@
+package Aula6.generics;
+
+public class Wrapper <TIPO_DADO>{
+	private TIPO_DADO valor;
+public 
+}

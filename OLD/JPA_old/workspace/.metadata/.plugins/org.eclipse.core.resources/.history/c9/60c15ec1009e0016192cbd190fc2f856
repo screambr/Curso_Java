@@ -1,0 +1,54 @@
+package com.dextrainning.pessoa;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import org.junit.AfterClass;
+import org.junit.Assert;
+import org.junit.Test;
+
+import com.dextrainning.jpa.EntityManagerUtil;
+
+public class PessoaTest {
+	
+
+		@AfterClass
+		public static void close() {
+			EntityManagerUtil.fechar();
+		}
+
+		@Test
+		public void salvarPessoaTeste() {
+			PessoaService pessoaService = new PessoaService();
+
+			Pessoa pessoa = new Pessoa();
+			pessoa.setNome("Anderson");
+
+			Pessoa pessoa1 = new Pessoa();
+			pessoa1.setDataNascimento(08/07/1982);
+
+			pessoaService.salvar(pessoa1);
+			
+			Assert.assertNotNull("Id da pessoa nao pode ser Null", pessoa1.getId());
+			
+		}
+
+		@Test
+		public void buscarPorIdTeste() {
+			PessoaService pessoaService = new pessoaService();
+			Pessoa pessoa = new Pessoa();
+			pessoa.setNome("Anderson");
+			
+			pessoaService.salvar(pessoa);
+
+			Pessoa pessoa1 = PessoaService.buscarPorId(-1L);
+			Pessoa pessoaEncontrado = pessoaService.buscarPorId(pessoa1.getId());
+			Assert.assertNull(pessoa1);
+			Assert.assertNull(pessoaEncontrado);
+			Assert.assertEquals(pessoa1.getNome(),pessoaEncontrado.getNome());
+		}
+
+	}
+
+
