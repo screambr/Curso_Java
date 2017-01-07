@@ -52,4 +52,5 @@
 <fullyQualifiedTypeName name="com.pousar.domain.usuario.Usuario"/>
 <fullyQualifiedTypeName name="javax.persistence.Entity"/>
 <fullyQualifiedTypeName name="javax.persistence.Column"/>
+<fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 </qualifiedTypeNameHistroy>
